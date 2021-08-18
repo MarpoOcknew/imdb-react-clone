@@ -1,0 +1,6 @@
+plugin:
+    name: 'martin.movies::lang.plugin.name'
+    description: 'martin.movies::lang.plugin.description'
+    author: Martin
+    icon: oc-icon-play-circle-o
+    homepage: ''
