@@ -28,6 +28,6 @@ class Categories extends Model
     ];
 
     public $belongsToMany = [
-        'listing' => ['\Martin\Movies\Models\Movies', 'table' => 'martin_movies_categories_movies']
+        'movie' => ['\Martin\Movies\Models\Movies', 'table' => 'martin_movies_categories_movies']
     ];
 }
