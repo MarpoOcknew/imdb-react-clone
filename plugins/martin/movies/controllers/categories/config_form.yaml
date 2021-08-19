@@ -1,0 +1,10 @@
+name: Categories
+form: $/martin/movies/models/categories/fields.yaml
+modelClass: Martin\Movies\Models\Categories
+defaultRedirect: martin/movies/categories
+create:
+    redirect: 'martin/movies/categories/update/:id'
+    redirectClose: martin/movies/categories
+update:
+    redirect: martin/movies/categories
+    redirectClose: martin/movies/categories

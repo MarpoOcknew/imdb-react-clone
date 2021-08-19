@@ -4,3 +4,21 @@ plugin:
     author: Martin
     icon: oc-icon-play-circle-o
     homepage: ''
+navigation:
+    main-menu-item:
+        label: IMDb
+        url: martin/movies/movies
+        icon: icon-play-circle-o
+        sideMenu:
+            side-menu-item3:
+                label: 'Add Movie'
+                url: martin/movies/movies/create
+                icon: icon-plus
+            side-menu-item:
+                label: Movies
+                url: martin/movies/movies
+                icon: icon-play-circle-o
+            side-menu-item2:
+                label: Categories
+                url: martin/movies/categories
+                icon: icon-newspaper-o

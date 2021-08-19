@@ -1,0 +1,21 @@
+fields:
+    title:
+        label: Name
+        span: auto
+        type: text
+    image:
+        label: Image
+        mode: image
+        span: right
+        type: mediafinder
+    description:
+        label: Description
+        size: large
+        span: left
+        type: richeditor
+    categories:
+        label: Categories
+        nameFrom: title
+        descriptionFrom: description
+        span: left
+        type: relation

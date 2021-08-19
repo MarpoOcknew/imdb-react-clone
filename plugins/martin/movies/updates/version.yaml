@@ -1,2 +1,17 @@
 1.0.1:
-    - Initialize plugin.
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table martin_movies_movies'
+    - builder_table_create_martin_movies_movies.php
+1.0.3:
+    - 'Created table martin_movies_categories'
+    - builder_table_create_martin_movies_categories.php
+1.0.4:
+    - 'Updated table martin_movies_movies'
+    - builder_table_update_martin_movies_movies.php
+1.0.5:
+    - 'Created table martin_movies_categories_movies'
+    - builder_table_create_martin_movies_categories_movies.php
+1.0.6:
+    - 'Updated table martin_movies_categories_movies'
+    - builder_table_update_martin_movies_categories_movies.php

@@ -1,0 +1,12 @@
+list: $/martin/movies/models/movies/columns.yaml
+modelClass: Martin\Movies\Models\Movies
+title: Movies
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'martin/movies/movies/update/:id'
