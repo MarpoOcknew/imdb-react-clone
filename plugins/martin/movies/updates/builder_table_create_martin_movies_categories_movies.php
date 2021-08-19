@@ -12,8 +12,6 @@ class BuilderTableCreateMartinMoviesCategoriesMovies extends Migration
             $table->engine = 'InnoDB';
             $table->integer('category_id')->nullable()->unsigned();
             $table->integer('movie_id')->nullable()->unsigned();
-            $table->timestamp('created_at')->nullable();
-            $table->timestamp('updated_at')->nullable();
         });
     }
     

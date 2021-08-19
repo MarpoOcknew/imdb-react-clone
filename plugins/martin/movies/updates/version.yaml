@@ -15,3 +15,6 @@
 1.0.6:
     - 'Updated table martin_movies_categories_movies'
     - builder_table_update_martin_movies_categories_movies.php
+1.0.7:
+    - 'Create seeder'
+    - IMDbSeeder.php
