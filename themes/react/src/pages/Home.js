@@ -1,7 +1,24 @@
-import React from "react";
-import MovieCard from "../components/MovieCard";
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import MovieCard from "../components/MovieCard"
+import { MoviesList } from '../features/movies/MoviesList'
 
 export default function Home() {
+    // const [movies, setMovies] = useState(null)
+
+    // const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTWFydGluIFBvbGxvY2siLCJyZWFzb24iOiJUbyBsb29rIGJldHRlciB0aGFuIGEgcmFuZG9tIHN0cmluZyJ9.7egTr-n_f2JnYU87_Jv_miyfVfAyjQT41BzC0Fq22Vo'
+
+    // useEffect(() => {
+    //     axios.get("/api/v1/movies", {
+    //         headers: { Authorization: `Bearer ${token}` }
+    //     }).then((response) => {
+    //         console.log(response.data.data)
+    //         setMovies(response.data.data);
+    //     }).catch((error) => {
+    //         console.error(error.message)
+    //     })
+    // })
+    
     return (
         <main>
             <section className="py-5 text-center container">
@@ -31,22 +48,12 @@ export default function Home() {
             <section className="container">
                 <div className="row">
                     <div className="col-md-10">
+                        <div className="col-12">
+                            <h2>Movies</h2>
+                        </div>
+
                         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-                            <MovieCard/>
-
-                            <MovieCard/>
-
-                            <MovieCard/>
-
-                            <MovieCard/>
-
-                            <MovieCard/>
-
-                            <MovieCard/>
-
-                            <MovieCard/>
-
-                            <MovieCard/>
+                            <MoviesList/>
                         </div>
                         
                         <div className="row g-3 mt-4">
