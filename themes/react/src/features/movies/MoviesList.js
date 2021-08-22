@@ -1,6 +1,16 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { selectAllMovies, fetchMovies } from './moviesSlice'
+import { selectAllMovies, selectAllData, fetchMovies } from './moviesSlice'
+import { Pagination } from 'react-laravel-paginex'
+
+// const getData = (data) => {
+//     // axios.get('getDataEndpoint?page=' + data.page).then(response => {
+//     //     this.setState({data:data});
+//     // });
+//     const dispatch = useDispatch()
+//     console.log(data)
+//     dispatch(fetchMovies(data.page))
+// };
 
 const MovieCard = ({ movie }) => {
     return (
@@ -29,13 +39,14 @@ const MovieCard = ({ movie }) => {
 export const MoviesList = () => {
     const dispatch = useDispatch()
     const movies = useSelector(selectAllMovies)
+    // const data = useSelector(selectAllData)
   
     const moviesStatus = useSelector((state) => state.movies.status)
     const error = useSelector((state) => state.movies.error)
   
     useEffect(() => {
         if (moviesStatus === 'idle') {
-            dispatch(fetchMovies())
+            dispatch(fetchMovies(1))
         }
     }, [moviesStatus, dispatch])
   
@@ -51,9 +62,19 @@ export const MoviesList = () => {
     } else if (moviesStatus === 'error') {
         content = <div>{error}</div>
     }
-  
+
     return (
-        content
+        <div>
+            <div className="col-12">
+                <h2>Movies</h2>
+            </div>
+
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                {content}
+            </div>
+
+            {/* <Pagination changePage={getData} data={data}/> */}
+        </div>
     )
-  }
+}
   
