@@ -1,8 +1,9 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect, Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Home from "./pages/Home";
-import About from "./pages/About";
+// import About from "./pages/About";
+import { MoviePage } from './features/movies/MoviePage'
 
 export default function App() {
     return (
@@ -11,10 +12,7 @@ export default function App() {
                 <header className="p-3 bg-dark text-white">
                     <div className="container">
                         <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                            <Link
-                                to="/"
-                                className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
-                            >
+                            <Link to="/" className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="20"
@@ -35,21 +33,15 @@ export default function App() {
 
                             <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                                 <li>
-                                    <Link
-                                        to="/"
-                                        className="nav-link px-2 text-white"
-                                    >
+                                    <Link to="/" className="nav-link px-2 text-white">
                                         Home
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link
-                                        to="/about"
-                                        className="nav-link px-2 text-white"
-                                    >
+                                {/* <li>
+                                    <Link to="/about" className="nav-link px-2 text-white">
                                         About
                                     </Link>
-                                </li>
+                                </li> */}
                             </ul>
 
                             <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
@@ -62,12 +54,9 @@ export default function App() {
                 {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
                 <Switch>
-                    <Route path="/about">
-                        <About />
-                    </Route>
-                    <Route path="/">
-                        <Home />
-                    </Route>
+                    {/* <Route path="/about"><About /></Route> */}
+                    <Route exact path="/movies/:movieId" component={MoviePage} />
+                    <Route path="/"><Home /></Route>
                 </Switch>
                 
                 <div className="container">

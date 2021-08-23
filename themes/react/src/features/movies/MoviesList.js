@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectAllMovies, selectAllData, fetchMovies } from './moviesSlice'
 import { Pagination } from 'react-laravel-paginex'
+import { Link } from "react-router-dom";
 
 // const getData = (data) => {
 //     // axios.get('getDataEndpoint?page=' + data.page).then(response => {
@@ -12,24 +13,38 @@ import { Pagination } from 'react-laravel-paginex'
 //     dispatch(fetchMovies(data.page))
 // };
 
-const MovieCard = ({ movie }) => {
+const Category = ({ cat }) => {
     return (
-        <div className="col" key={movie.id}>
+        <span key={cat.id} className="badge rounded-pill bg-info">{cat.title}</span>
+    )
+}
+
+const MovieCard = ({ movie }) => {
+    let categories = movie.categories.map((cat) => (
+        <Category key={cat.id} cat={cat} />
+    ))
+
+    return (
+        <div className="col card-group" key={movie.id}>
             <div className="card shadow-sm">
                 <img src={'/storage/app/media/'+movie.image} className="card-img-top"/>
 
                 <div className="card-header">
-                    <h5 className="card-title">{movie.title}</h5>
+                    <h5 className="card-title mb-0">{movie.title}</h5>
                 </div>
 
-                <div className="card-body">
+                <div className="card-body d-flex flex-column align-items-center">
                     <p className="card-text">
                         {movie.description.substring(0, 100)}
                     </p>
+
+                    <Link to={`/movies/${movie.id}`} className="btn btn-primary">
+                        View Details
+                    </Link>
                 </div>
 
-                <div className="card-footer">
-                    <span className="badge rounded-pill bg-primary">{movie.category}</span>
+                <div className="card-footer d-flex justify-content-around">
+                    {categories}
                 </div>
             </div>
         </div>
