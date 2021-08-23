@@ -14,6 +14,7 @@ class MoviesController extends \Cms\Classes\Controller
     public function index()
     {
         $movies = Movies::with('categories')
+                        ->orderBy('created_at', 'desc')
                         ->paginate(8);
 
         return response()->json(['data' => $movies, 'success' => 'success'], 200);
